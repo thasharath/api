@@ -4,11 +4,13 @@ header("Access-Control-Allow-Headers: *");
 
 
 include 'DbConnect.php';
-$objDb = new DbConnect;
-$conn = $objDb->connect();
+// $objDb = new DbConnect;
+// $conn = $objDb->connect();
 
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body, true);
+
+echo $data;
 
 $firstName = $data['firstName'];
 $lastName = $data['lastName'];
@@ -32,7 +34,7 @@ if ($results == true) {
 $mysqli->close();
 
 
-// var_dump($conn);
+var_dump($conn);
 
 // echo "hi";
 
