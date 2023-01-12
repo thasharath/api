@@ -10,8 +10,8 @@ include 'DbConnect.php';
 // $objDb = new DbConnect;
 // $conn = $objDb->connect();
 
-$request_body = file_get_contents('php://input');
-$data = json_decode($request_body, true);
+$request_data = file_get_contents('php://input');
+$data = json_decode($request_data, true);
 
 // echo $data;
 
