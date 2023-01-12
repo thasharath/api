@@ -1,6 +1,9 @@
 <?php 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 
 include 'DbConnect.php';
@@ -10,7 +13,7 @@ include 'DbConnect.php';
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body, true);
 
-echo $data;
+// echo $data;
 
 $firstName = $data['firstName'];
 $lastName = $data['lastName'];
@@ -21,7 +24,7 @@ $phone = $data['phone'];
 $role = $data['role'];
 $password = $data['password'];
 
-$sql = "INSERT INTO users(firstName, lastName, studentId, nic, email, phone, role, password) VALUES('$firstName', '$lastName', '$studentId', '$nic', '$email', '$phone', '$role', '$password')";
+$sql = "INSERT INTO users(firstName, lastName, studentId, nic, email, phone, role, password) VALUES('$firstName', '$lastName', '$studentId', '$nic', '$email', $phone, '$role', '$password')";
 
 $results = $mysqli->query($sql);
 
@@ -34,7 +37,7 @@ if ($results == true) {
 $mysqli->close();
 
 
-var_dump($conn);
+// var_dump($conn);
 
 // echo "hi";
 

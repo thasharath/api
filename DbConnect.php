@@ -23,10 +23,10 @@
 
 		if ($mysqli -> connect_error) {
 			echo "Failed";
-			exit();
-		} else {
-			echo "success<br/>";
-		}
+			exit();}
+		// } else {
+		// 	echo "succesasdasds<br/>";
+		// }
 
 
  ?>
